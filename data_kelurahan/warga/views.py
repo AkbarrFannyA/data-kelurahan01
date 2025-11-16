@@ -76,3 +76,13 @@ from .serializers import WargaSerializer
 class WargaListAPIView(generics.ListAPIView):
     queryset = Warga.objects.all()
     serializer_class = WargaSerializer
+
+# =========================
+#     API CRUD PENUH
+# =========================
+from rest_framework import viewsets
+from .serializers import WargaSerializer
+
+class WargaViewSet(viewsets.ModelViewSet):
+    queryset = Warga.objects.all()
+    serializer_class = WargaSerializer

@@ -5,3 +5,4 @@ class WargaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Warga
         fields = '__all__'
+

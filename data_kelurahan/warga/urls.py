@@ -28,3 +28,11 @@ urlpatterns = [
     # ======== API (JSON) ========
     path('api/warga/', WargaListAPIView.as_view(), name='api-warga-list'),
 ]
+# ==== API CRUD FULL ====
+from rest_framework.routers import DefaultRouter
+from .views import WargaViewSet
+
+router = DefaultRouter()
+router.register(r'api/warga', WargaViewSet)
+
+urlpatterns += router.urls
