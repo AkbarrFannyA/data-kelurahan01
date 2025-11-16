@@ -86,3 +86,10 @@ from .serializers import WargaSerializer
 class WargaViewSet(viewsets.ModelViewSet):
     queryset = Warga.objects.all()
     serializer_class = WargaSerializer
+from rest_framework import permissions
+from .serializers import PengaduanSerializer
+
+class PengaduanViewSet(viewsets.ModelViewSet):
+    queryset = Pengaduan.objects.all()
+    serializer_class = PengaduanSerializer
+    permission_classes = [permissions.IsAuthenticated]   # nanti bisa diganti jadi IsAdminUser
